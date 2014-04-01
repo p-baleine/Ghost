@@ -63,7 +63,7 @@ var path           = require('path'),
                 'ghost-ui': {
                     files: [
                         // Ghost UI CSS
-                        'bower_components/ghost-ui/dist/css/*.css'
+                        'components/ghost-ui/dist/css/*.css'
                     ],
                     tasks: ['copy:dev']
                 },
@@ -307,7 +307,7 @@ var path           = require('path'),
             // command line tools
             shell: {
                 bower: {
-                    command: path.resolve(__dirname + '/node_modules/.bin/bower install'),
+                    command: path.resolve(__dirname + '/node_modules/.bin/bower install --allow-root'),
                     options: {
                         stdout: true
                     }
@@ -381,12 +381,12 @@ var path           = require('path'),
             copy: {
                 dev: {
                     files: [{
-                        cwd: 'bower_components/jquery/dist/',
+                        cwd: 'components/jquery/dist/',
                         src: 'jquery.js',
                         dest: 'core/built/public/',
                         expand: true
                     }, {
-                        cwd: 'bower_components/ghost-ui/dist/',
+                        cwd: 'components/ghost-ui/dist/',
                         src: ['**'],
                         dest: 'core/client/assets/',
                         expand: true
@@ -394,12 +394,12 @@ var path           = require('path'),
                 },
                 prod: {
                     files: [{
-                        cwd: 'bower_components/jquery/dist/',
+                        cwd: 'components/jquery/dist/',
                         src: 'jquery.js',
                         dest: 'core/built/public/',
                         expand: true
                     }, {
-                        cwd: 'bower_components/ghost-ui/dist/',
+                        cwd: 'components/ghost-ui/dist/',
                         src: ['**'],
                         dest: 'core/client/assets/',
                         expand: true
@@ -407,12 +407,12 @@ var path           = require('path'),
                 },
                 release: {
                     files: [{
-                        cwd: 'bower_components/jquery/dist/',
+                        cwd: 'components/jquery/dist/',
                         src: 'jquery.js',
                         dest: 'core/built/public/',
                         expand: true
                     }, {
-                        cwd: 'bower_components/ghost-ui/dist/',
+                        cwd: 'components/ghost-ui/dist/',
                         src: ['**'],
                         dest: 'core/client/assets/',
                         expand: true
@@ -443,22 +443,22 @@ var path           = require('path'),
                 dev: {
                     files: {
                         'core/built/scripts/vendor.js': [
-                            'bower_components/jquery/dist/jquery.js',
-                            'bower_components/jquery-ui/ui/jquery-ui.js',
+                            'components/jquery/dist/jquery.js',
+                            'components/jquery-ui/ui/jquery-ui.js',
                             'core/client/assets/lib/jquery-utils.js',
                             'core/client/assets/lib/uploader.js',
 
-                            'bower_components/lodash/dist/lodash.underscore.js',
-                            'bower_components/backbone/backbone.js',
-                            'bower_components/handlebars/handlebars.runtime.js',
-                            'bower_components/moment/moment.js',
-                            'bower_components/jquery-file-upload/js/jquery.fileupload.js',
-                            'bower_components/codemirror/lib/codemirror.js',
-                            'bower_components/codemirror/addon/mode/overlay.js',
-                            'bower_components/codemirror/mode/markdown/markdown.js',
-                            'bower_components/codemirror/mode/gfm/gfm.js',
-                            'bower_components/showdown/src/showdown.js',
-                            'bower_components/validator-js/validator.js',
+                            'components/lodash/dist/lodash.underscore.js',
+                            'components/backbone/backbone.js',
+                            'components/handlebars/handlebars.runtime.js',
+                            'components/moment/moment.js',
+                            'components/jquery-file-upload/js/jquery.fileupload.js',
+                            'components/codemirror/lib/codemirror.js',
+                            'components/codemirror/addon/mode/overlay.js',
+                            'components/codemirror/mode/markdown/markdown.js',
+                            'components/codemirror/mode/gfm/gfm.js',
+                            'components/showdown/src/showdown.js',
+                            'components/validator-js/validator.js',
 
                             'core/shared/lib/showdown/extensions/ghostimagepreview.js',
                             'core/shared/lib/showdown/extensions/ghostgfm.js',
@@ -467,9 +467,9 @@ var path           = require('path'),
                             'core/client/assets/vendor/shortcuts.js',
                             'core/client/assets/vendor/to-title-case.js',
 
-                            'bower_components/Countable/Countable.js',
-                            'bower_components/fastclick/lib/fastclick.js',
-                            'bower_components/nprogress/nprogress.js'
+                            'components/Countable/Countable.js',
+                            'components/fastclick/lib/fastclick.js',
+                            'components/nprogress/nprogress.js'
                         ],
 
                         'core/built/scripts/helpers.js': [
@@ -505,22 +505,22 @@ var path           = require('path'),
                 prod: {
                     files: {
                         'core/built/scripts/ghost.js': [
-                            'bower_components/jquery/dist/jquery.js',
-                            'bower_components/jquery-ui/ui/jquery-ui.js',
+                            'components/jquery/dist/jquery.js',
+                            'components/jquery-ui/ui/jquery-ui.js',
                             'core/client/assets/lib/jquery-utils.js',
                             'core/client/assets/lib/uploader.js',
 
-                            'bower_components/lodash/dist/lodash.underscore.js',
-                            'bower_components/backbone/backbone.js',
-                            'bower_components/handlebars/handlebars.runtime.js',
-                            'bower_components/moment/moment.js',
-                            'bower_components/jquery-file-upload/js/jquery.fileupload.js',
-                            'bower_components/codemirror/lib/codemirror.js',
-                            'bower_components/codemirror/addon/mode/overlay.js',
-                            'bower_components/codemirror/mode/markdown/markdown.js',
-                            'bower_components/codemirror/mode/gfm/gfm.js',
-                            'bower_components/showdown/src/showdown.js',
-                            'bower_components/validator-js/validator.js',
+                            'components/lodash/dist/lodash.underscore.js',
+                            'components/backbone/backbone.js',
+                            'components/handlebars/handlebars.runtime.js',
+                            'components/moment/moment.js',
+                            'components/jquery-file-upload/js/jquery.fileupload.js',
+                            'components/codemirror/lib/codemirror.js',
+                            'components/codemirror/addon/mode/overlay.js',
+                            'components/codemirror/mode/markdown/markdown.js',
+                            'components/codemirror/mode/gfm/gfm.js',
+                            'components/showdown/src/showdown.js',
+                            'components/validator-js/validator.js',
 
                             'core/shared/lib/showdown/extensions/ghostimagepreview.js',
                             'core/shared/lib/showdown/extensions/ghostgfm.js',
@@ -529,9 +529,9 @@ var path           = require('path'),
                             'core/client/assets/vendor/shortcuts.js',
                             'core/client/assets/vendor/to-title-case.js',
 
-                            'bower_components/Countable/Countable.js',
-                            'bower_components/fastclick/lib/fastclick.js',
-                            'bower_components/nprogress/nprogress.js',
+                            'components/Countable/Countable.js',
+                            'components/fastclick/lib/fastclick.js',
+                            'components/nprogress/nprogress.js',
 
                             'core/client/init.js',
 
@@ -933,7 +933,9 @@ var path           = require('path'),
         grunt.registerTask('prod', 'Build JS & templates for production', ['handlebars', 'concat', 'uglify', 'copy:prod']);
 
         // When you just say 'grunt'
-        grunt.registerTask('default', 'Build JS & templates for development', ['update_submodules', 'handlebars', 'concat', 'copy:dev']);
+        // grunt.registerTask('default', 'Build JS & templates for development', ['update_submodules', 'handlebars', 'concat', 'copy:dev']);
+        // submoduleでこけるので一旦コメントアウト
+        grunt.registerTask('default', 'Build JS & templates for development', ['handlebars', 'concat', 'copy:dev']);
     };
 
 module.exports = configureGrunt;
